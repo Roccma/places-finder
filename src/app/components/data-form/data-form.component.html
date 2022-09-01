@@ -1,0 +1,32 @@
+<div>
+    
+    <mat-form-field appearance="fill" style = "width: 100%" class = "mt-15">
+      <mat-label>Nombre</mat-label>
+      <input ngx-google-places-autocomplete (onAddressChange)="AddressChange($event)" matInput placeholder="Nombre"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill" style = "width: 100%" class = "mt-15">
+      <mat-label>Palabras claves</mat-label>
+      <input matInput type = "text" placeholder="Palabras claves" [value] = "keywords" (keyup) = "onKeywordsKeyUp($event)"/>
+    </mat-form-field>
+    <small class = "small-aclaration">En caso de ser más de una, separarlas con coma (,)</small>
+    <div>
+      <span class = "mat-body pl-5 mt-15">Rango: {{ range }} mts</span>
+        <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        [value] = "range"
+        tickInterval="500"
+        step="500"
+        min="0"
+        max="50000"
+        aria-label="units"
+        class = 'slider'
+        color = 'primary'
+        (change) = "onChangeSlider($event)"></mat-slider>
+    </div>
+    <div class = "button-container mt-15">
+      <button mat-fab color="primary" class = "btn-right" (click) = "onGetData()">
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+</div>

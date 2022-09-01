@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  google_key: 'AIzaSyCvGYaBxGoan09uaQwDUrOHPyy36tvNcIo',
+  maps_key: 'AIzaSyDK4IJCRHpiObsHWUASG8sN4chVn42J9QEs',
+  search_places_url: 'https://places-finder-backend.herokuapp.com/index.php'
 };
 
 /*
